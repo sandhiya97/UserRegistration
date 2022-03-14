@@ -1,6 +1,5 @@
 package UserRegistration;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class UserRegistration {
@@ -9,18 +8,25 @@ public class UserRegistration {
     String firstName = "";
     String lastName = "";
     String email = "";
+    String phoneNumber = "";
 
     /**
      * UserRegistration() - constructor to create object by getting input from user
      * gets user registration details and stores in the variables
      */
     public UserRegistration() {
+
         System.out.print("Enter First name: ");
         setFirstName(input.nextLine());
+
         System.out.print("Enter Last name: ");
         setLastName(input.nextLine());
-        System.out.println("Enter email address; ");
+
+        System.out.print("Enter email address: ");
         setEmail(input.nextLine());
+
+        System.out.print("Enter phone number: ");
+        setPhoneNumber(input.nextLine());
     }
 
     /**
@@ -69,6 +75,22 @@ public class UserRegistration {
         else{
             System.out.print("Please enter email again: ");
             setEmail(input.nextLine());
+        }
+    }
+
+    /**
+     * setPhoneNumber - method to set value for phoneNumber variable
+     * @param phoneNumber - passes user phone number to function
+     *              validates it by passing through userValidation object
+     *              and then sets it to phoneNumber variable of this class
+     *              else asks to enter phone number again
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        if (userValidation.isPhoneNumberValid(phoneNumber))
+           this.phoneNumber = phoneNumber;
+        else{
+            System.out.print("Please enter phone number again: ");
+            setPhoneNumber(input.nextLine());
         }
     }
 }

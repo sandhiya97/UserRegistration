@@ -37,5 +37,13 @@ public class RegexConstants {
      */
     public static final String EMAIL_REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,4}$";
     
+    /*
+    Mobile number is given a predefined structure in the UC as first 2 digits are country code
+    with a single space, so [0-9]{2} \\s is used.
+    Then the first number can be between 1-9 as we won't use 0 in starting of mobile number.
+    We can also restrict it to 6-9 as per the current usage of Indian numbers or any country usages
+    And then remaining 9 numbers will be between 0-9 for which quantifier {9} is used.
+     */
+    public static final String PHONE_NUMBER_REGEX = "[0-9]{2}\\s[1-9]{1}[0-9]{9}";
 
 }

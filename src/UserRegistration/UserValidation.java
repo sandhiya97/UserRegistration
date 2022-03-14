@@ -71,4 +71,23 @@ public class UserValidation {
         }
         return false;
     }
+
+    /**
+     * isPhoneNumberValid - method to check validity of phone number
+     *
+     * @param phoneNumber - user input data
+     * @return - boolean value if phone number matches with its regex condition
+     */
+    public boolean isPhoneNumberValid(String phoneNumber){
+        /*
+        validateRegex function is called by passing phone number user input
+        and phone number regex pattern stored in RegexConstants class
+         */
+        if (validateRegex(phoneNumber, RegexConstants.PHONE_NUMBER_REGEX)){
+            return true;
+        } else {
+            System.out.println("Invalid phone number.");
+        }
+        return false;
+    }
 }
