@@ -3,12 +3,14 @@ package UserRegistration;
 import java.util.Scanner;
 
 public class UserRegistration {
+
     UserValidation userValidation = new UserValidation();
     Scanner input = new Scanner(System.in);
     String firstName = "";
     String lastName = "";
     String email = "";
     String phoneNumber = "";
+    String password = "";
 
     /**
      * UserRegistration() - constructor to create object by getting input from user
@@ -27,6 +29,9 @@ public class UserRegistration {
 
         System.out.print("Enter phone number: ");
         setPhoneNumber(input.nextLine());
+
+        System.out.print("Enter password: ");
+        setPassword(input.nextLine());
     }
 
     /**
@@ -90,6 +95,22 @@ public class UserRegistration {
            this.phoneNumber = phoneNumber;
         else{
             System.out.print("Please enter phone number again: ");
+            setPhoneNumber(input.nextLine());
+        }
+    }
+
+    /**
+     * setPassword - method to set value for password variable
+     * @param password - passes user password to function
+     *              validates it by passing through userValidation object
+     *              and then sets it to password variable of this class
+     *              else asks to enter password again
+     */
+    public void setPassword(String password) {
+        if (userValidation.isPasswordValid(password))
+            this.password = password;
+        else {
+            System.out.print("Please enter password again: ");
             setPhoneNumber(input.nextLine());
         }
     }

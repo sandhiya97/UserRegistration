@@ -45,5 +45,10 @@ public class RegexConstants {
     And then remaining 9 numbers will be between 0-9 for which quantifier {9} is used.
      */
     public static final String PHONE_NUMBER_REGEX = "[0-9]{2}\\s[1-9]{1}[0-9]{9}";
+    
+    /*
+    A password needs to be at least 8 characters in it, so {8,0} is used to ensure that.
+    */
+   public static final String PASSWORD_REGEX = "[a-zA-Z0-9!@#$%^&*_]{8,}$";
 
 }

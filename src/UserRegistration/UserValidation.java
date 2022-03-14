@@ -90,4 +90,23 @@ public class UserValidation {
         }
         return false;
     }
+
+    /**
+     * isPasswordValid - method to check validity of password
+     *
+     * @param password - user input data
+     * @return - boolean value if password matches with its regex condition
+     */
+    public boolean isPasswordValid(String password){
+        /*
+        validateRegex function is called by passing password user input
+        and password regex pattern stored in RegexConstants class
+         */
+        if (validateRegex(password, RegexConstants.PASSWORD_REGEX)){
+            return true;
+        } else {
+            System.out.println("Invalid password.");
+        }
+        return false;
+    }
 }
