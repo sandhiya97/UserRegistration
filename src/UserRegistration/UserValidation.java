@@ -52,4 +52,23 @@ public class UserValidation {
         }
         return false;
     }
+
+    /**
+     * isEmailValid - method to check validity of email
+     *
+     * @param email - user input data
+     * @return - boolean value if email matches with its regex condition
+     */
+    public boolean isEmailValid(String email){
+        /*
+        validateRegex function is called by passing email user input
+        and email regex pattern stored in RegexConstants class
+         */
+        if (validateRegex(email, RegexConstants.EMAIL_REGEX)){
+            return true;
+        } else {
+            System.out.println("Invalid email.");
+        }
+        return false;
+    }
 }

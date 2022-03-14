@@ -25,5 +25,17 @@ public class RegexConstants {
     maximum character length for last name.
      */
     public static final String LAST_NAME_REGEX = "^[A-Z][a-z]{2,}";
+    
+    /*
+    An email can start with any alphanumeric character or few special characters so
+    ^[a-zA-Z0-9_+&*-]+ is used. The '+' sign denotes the letters need to present one or more times.
+    The next part (?:pattern) can be entered or not entered. It's for zero or more times \\. is used to
+    escape '.' in the pattern.
+    After that '@' symbol is mandatory in an email which is directly entered. Then for a domain name with .
+    (?:[a-zA-Z0-9-]+\\.) is used at least one time
+    At the end, domain extension need to be 2 to 4 letters so [a-zA-Z]{2,7}$ is used.
+     */
+    public static final String EMAIL_REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,4}$";
+    
 
 }
