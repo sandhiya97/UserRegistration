@@ -8,25 +8,25 @@ class UserValidationTest {
 
     @org.junit.jupiter.api.Test
     public void testFirstName_thenAssertionSucceeds() {
-            assertTrue(user.isFirstNameValid("Naveen"));
+            assertTrue(user.isFirstNameValid("Sandhiya"));
             System.out.println("Valid First Name");
     }
 
     @org.junit.jupiter.api.Test
     public void testFirstName_thenAssertionFail() {
-        assertFalse(user.isFirstNameValid("naveen"));
+        assertFalse(user.isFirstNameValid("Babu"));
         System.out.println("InvalidValid First Name");
     }
 
     @org.junit.jupiter.api.Test
     public void testLastName_thenAssertionSucceeds() {
-        assertTrue(user.isLastNameValid("Kumar"));
+        assertTrue(user.isLastNameValid("Babu"));
         System.out.println("Valid Last Name");
     }
 
     @org.junit.jupiter.api.Test
     public void testLastName_thenAssertionFail() {
-        assertFalse(user.isLastNameValid("kumar"));
+        assertFalse(user.isLastNameValid("Babu"));
         System.out.println("Invalid Last Name");
     }
 
