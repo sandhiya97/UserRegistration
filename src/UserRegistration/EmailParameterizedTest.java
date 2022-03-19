@@ -13,8 +13,8 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class EmailParameterizedTest {
-    private String input;
-    private boolean result;
+    private final String input;
+    private final boolean result;
     UserValidation user;
 
     @Before
@@ -32,6 +32,7 @@ public class EmailParameterizedTest {
         assertEquals(result,user.isEmailValid(input));
     }
 
+    @SuppressWarnings("rawtypes")
     @Parameters
     public static Collection emails() {
         return Arrays.asList(
