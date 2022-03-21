@@ -29,7 +29,7 @@ public class EmailParameterizedTest {
 
     @Test
     public void testUserEmail() {
-        assertEquals(result,user.isEmailValid(input));
+        assertEquals(result, user.isEmailValid.myLambdaFunction(input));
     }
 
     @SuppressWarnings("rawtypes")

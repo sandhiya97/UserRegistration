@@ -15,12 +15,10 @@ public class UserValidation {
     }
 
     /**
-     * isFirstNameValid - method to check validity of first name
+     * isFirstNameValid - Lambda method to check validity of first name
      *
-     * @param firstName - user input data
-     * @return - boolean value if first name matches with its regex condition
      */
-    public boolean isFirstNameValid(String firstName){
+    myLambdaInterface isFirstNameValid = firstName -> {
 
         /*
         validateRegex function is called by passing first name user input
@@ -32,15 +30,13 @@ public class UserValidation {
             System.out.println("Invalid first name.");
         }
         return false;
-    }
+    };
 
     /**
-     * isLastNameValid - method to check validity of last name
+     * isLastNameValid - Lambda method to check validity of last name
      *
-     * @param lastName - user input data
-     * @return - boolean value if first name matches with its regex condition
      */
-    public boolean isLastNameValid(String lastName){
+    myLambdaInterface isLastNameValid = lastName -> {
         /*
         validateRegex function is called by passing last name user input
         and last name regex pattern stored in RegexConstants class
@@ -51,34 +47,25 @@ public class UserValidation {
             System.out.println("Invalid last name.");
         }
         return false;
-    }
+    };
 
     /**
      * isEmailValid - method to check validity of email
      *
-     * @param email - user input data
-     * @return - boolean value if email matches with its regex condition
      */
-    public boolean isEmailValid(String email){
+    myLambdaInterface isEmailValid = email -> {
         /*
         validateRegex function is called by passing email user input
         and email regex pattern stored in RegexConstants class
          */
-        if (validateRegex(email, RegexConstants.EMAIL_REGEX)){
-            return true;
-        } else {
-            System.out.println("Invalid email.");
-        }
-        return false;
-    }
+        return validateRegex(email, RegexConstants.EMAIL_REGEX);
+    };
 
     /**
      * isPhoneNumberValid - method to check validity of phone number
      *
-     * @param phoneNumber - user input data
-     * @return - boolean value if phone number matches with its regex condition
      */
-    public boolean isPhoneNumberValid(String phoneNumber){
+    myLambdaInterface isPhoneNumberValid = phoneNumber -> {
         /*
         validateRegex function is called by passing phone number user input
         and phone number regex pattern stored in RegexConstants class
@@ -89,15 +76,13 @@ public class UserValidation {
             System.out.println("Invalid phone number.");
         }
         return false;
-    }
+    };
 
     /**
      * isPasswordValid - method to check validity of password
      *
-     * @param password - user input data
-     * @return - boolean value if password matches with its regex condition
      */
-    public boolean isPasswordValid(String password){
+    myLambdaInterface isPasswordValid = password -> {
         /*
         validateRegex function is called by passing password user input
         and password regex pattern stored in RegexConstants class
@@ -108,5 +93,9 @@ public class UserValidation {
             System.out.println("Invalid password.");
         }
         return false;
+    };
+
+    interface myLambdaInterface {
+        boolean myLambdaFunction(String input);
     }
 }

@@ -42,7 +42,7 @@ public class UserRegistration {
      *                  else asks to enter the first name again
      */
     public void setFirstName(String firstName) {
-        if(userValidation.isFirstNameValid(firstName))
+        if(userValidation.isFirstNameValid.myLambdaFunction(firstName))
             this.firstName = firstName;
         else{
             System.out.print("Please enter first name again: ");
@@ -59,7 +59,7 @@ public class UserRegistration {
      *                 else asks to enter last name again
      */
     public void setLastName(String lastName) {
-        if(userValidation.isLastNameValid(lastName))
+        if(userValidation.isLastNameValid.myLambdaFunction(lastName))
             this.lastName = lastName;
         else{
             System.out.print("Please enter last name again: ");
@@ -75,7 +75,7 @@ public class UserRegistration {
      *              else asks to enter email again
      */
     public void setEmail(String email) {
-        if(userValidation.isEmailValid(email))
+        if(userValidation.isEmailValid.myLambdaFunction(email))
             this.email = email;
         else{
             System.out.print("Please enter email again: ");
@@ -91,7 +91,7 @@ public class UserRegistration {
      *              else asks to enter phone number again
      */
     public void setPhoneNumber(String phoneNumber) {
-        if (userValidation.isPhoneNumberValid(phoneNumber))
+        if (userValidation.isPhoneNumberValid.myLambdaFunction(phoneNumber))
            this.phoneNumber = phoneNumber;
         else{
             System.out.print("Please enter phone number again: ");
@@ -107,11 +107,11 @@ public class UserRegistration {
      *              else asks to enter password again
      */
     public void setPassword(String password) {
-        if (userValidation.isPasswordValid(password))
+        if (userValidation.isPasswordValid.myLambdaFunction(password))
             this.password = password;
         else {
             System.out.print("Please enter password again: ");
-            setPhoneNumber(input.nextLine());
+            setPassword(input.nextLine());
         }
     }
 }
